@@ -1,10 +1,16 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-
+import React, { useState } from 'react'
+import { Button, Container } from 'react-bootstrap'
+import DatesCount from './components/DatesCount.jsx'
+import {person} from './data.js'
+import DatesList from './components/DatesList.jsx'
 const App = () => {
+  const [personData , setPersonData] = useState(person)
   return (
-    <div>
-      <Button className='btn btn-primary'>Test</Button>
+    <div className='color-body'>
+      <Container className='py-5 '>
+          <DatesCount  person = {personData}/>
+          <DatesList person = {personData}/>
+      </Container>
     </div>
   )
 }

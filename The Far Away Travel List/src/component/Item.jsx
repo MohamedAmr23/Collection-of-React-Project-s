@@ -1,11 +1,18 @@
-import React from 'react'
-const Item = ({item}) => {
+import React from "react";
+const Item = ({ item, handleDeleteItem, handleToggleItem }) => {
   return (
-    <li >
-        <span style={item.packed ? {textDecoration:'line-through'} : {}}>{item.quantatity} {item.desc} </span>
-        <button>❌</button>
+    <li>
+      <input
+        type="checkbox"
+        value={item.packed}
+        onChange={() => handleToggleItem(item.id)}
+      />
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.description}
+      </span>
+      <button onClick={() => handleDeleteItem(item.id)}>❌</button>
     </li>
-  )
-}
+  );
+};
 
-export default Item
+export default Item;

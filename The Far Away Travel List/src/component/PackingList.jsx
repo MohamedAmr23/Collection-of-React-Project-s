@@ -1,20 +1,20 @@
-import React from 'react'
-import Item from './item'
-const initialItem = [
-    {id:1 , desc:"test" , quantatity:2 , packed:true},
-    {id:2 , desc:"test2" , quantatity:22 , packed:true},
-    {id:3 , desc:"test3" , quantatity:23 , packed:false},
-]
-const PackingList = () => {
+import React from "react";
+import Item from "./item";
+const PackingList = ({ items, handleDeleteItem, handleToggleItem }) => {
   return (
-    <div className='list'>
+    <div className="list">
       <ul>
-        {initialItem.map((item)=>(
-          <Item item={item}/>
+        {items.map((item) => (
+          <Item
+            item={item}
+            key={item.id}
+            handleDeleteItem={handleDeleteItem}
+            handleToggleItem={handleToggleItem}
+          />
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default PackingList
+export default PackingList;

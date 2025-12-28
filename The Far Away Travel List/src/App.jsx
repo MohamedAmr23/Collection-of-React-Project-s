@@ -19,7 +19,7 @@ const App = () => {
     <div className='app'>
       <Logo/>
       <Form onAddItems={handleNewItems}/>
-      <PackingList handleToggleItem={handleToggleItem} items={items} handleDeleteItem={handleDeleteItem}/>
+      <PackingList handleToggleItem={handleToggleItem} items={items} handleDeleteItem={handleDeleteItem} setItems={setItems}/>
       <Stats items={items}/>
     </div>
   )
